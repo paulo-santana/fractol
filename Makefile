@@ -20,8 +20,8 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 LFLAGS = -L./libft -L./minilibx-linux -lft -lmlx -lXext -lX11 -lm
 IFLAGS = -I./includes
-CFLAGS = -Wall -Werror -Wextra -Ofast
-CC = clang
+CFLAGS = -Wall -Werror -Wextra -O3
+CC = gcc
 
 all: $(NAME)
 
