@@ -4,10 +4,10 @@
 static inline unsigned int get_color(t_fractol *fractol, unsigned int x, unsigned int y)
 {
 	double x2 = 0, y2 = 0;
-	double real = 0;
-	double imag = 0;
+	long double real = 0;
+	long double imag = 0;
 	int i = 0;
-	double c_real, c_imag;
+	long double c_real, c_imag;
 
 	screen_to_world(fractol, x, y, &c_real, &c_imag);
 	while (x2 + y2 <= 4 && i < fractol->max_iter)
@@ -27,6 +27,7 @@ void mandelbrot(t_fractol *fractol)
 	int current_row;
 
 	i = 0;
+	generate_colors(fractol);
 	while (i < fractol->image->height)
 	{
 		j = 0;

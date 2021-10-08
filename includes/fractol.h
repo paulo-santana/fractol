@@ -23,13 +23,13 @@ struct s_fractol {
 	int				shift;
 	int				max_iter;
 	void 			(*render_fn) (t_fractol *fractol);
-	double			c_real;
-	double			c_imag;
-	unsigned int	colors[255];
+	long double			c_real;
+	long double			c_imag;
+	unsigned int	colors[1024];
 	int mouse;
-	double scale;
-	double offset_x;
-	double offset_y;
+	long double scale;
+	long double offset_x;
+	long double offset_y;
 };
 
 t_image	*generate_mlx_image(void *mlx_ptr, unsigned width, unsigned height);
@@ -40,8 +40,8 @@ void draw_image(t_fractol *fractol);
 void mandelbrot(t_fractol *fractol);
 void generate_colors(t_fractol *fractol);
 void julia(t_fractol *fractol);
-void world_to_screen(t_fractol *fractol, double world_x, double world_y, int *screen_x, int *screen_y);
-void screen_to_world(t_fractol *fractol, int screen_x, int screen_y, double *world_x, double *world_y);
+void world_to_screen(t_fractol *fractol, long double world_x, long double world_y, int *screen_x, int *screen_y);
+void screen_to_world(t_fractol *fractol, int screen_x, int screen_y, long double *world_x, long double *world_y);
 int wheel_handler(int key, int x, int y, void *param);
 
 #endif

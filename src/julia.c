@@ -1,5 +1,6 @@
 #include <fractol.h>
 #include <math.h>
+#include <stdio.h>
 
 static inline unsigned int get_color(t_fractol *fractol, unsigned x, unsigned y)
 {
